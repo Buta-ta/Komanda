@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 360" fill="none">
+  <!-- =================================================== -->
+  <!-- KOMANDA · Logo en forme de touche Entrée / Enter key  -->
+  <!-- Trois variantes : full / mark / light                 -->
+  <!-- =================================================== -->
+
+  <defs>
+    <!-- Dégradé jaune ananas de la touche -->
+    <linearGradient id="keyTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE066"/>
+      <stop offset="0.55" stop-color="#FFD23F"/>
+      <stop offset="1" stop-color="#E8A317"/>
+    </linearGradient>
+    <!-- Brillant haut de touche -->
+    <linearGradient id="keyGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.4" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Ombre portée de la touche -->
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- ============ VARIANTE 1 : LOGO COMPLET (fond clair) ============ -->
+  <g id="logo-full-light" filter="url(#softShadow)">
+    <!-- La touche Entrée (forme en L retournée) -->
+    <!-- Corps de la touche (ombre/base) -->
+    <g transform="translate(40 70)">
+      <!-- Base / profondeur de la touche -->
+      <path d="M0 36 L0 196 Q0 220 24 220 L216 220 Q240 220 240 196 L240 100 L320 100 L320 196 Q320 220 344 220 L416 220 Q440 220 440 196 L440 24 Q440 0 416 0 L24 0 Q0 0 0 24 Z"
+            fill="#B87E0C"/>
+      <!-- Dessus de la touche -->
+      <path d="M0 20 L0 180 Q0 204 24 204 L216 204 Q240 204 240 180 L240 84 L320 84 L320 180 Q320 204 344 204 L416 204 Q440 204 440 180 L440 8 Q440 -16 416 -16 L24 -16 Q0 -16 0 8 Z"
+            transform="translate(0 8)" fill="url(#keyTop)"/>
+      <!-- Brillant -->
+      <path d="M0 20 L0 180 Q0 204 24 204 L216 204 Q240 204 240 180 L240 84 L320 84 L320 180 Q320 204 344 204 L416 204 Q440 204 440 180 L440 8 Q440 -16 416 -16 L24 -16 Q0 -16 0 8 Z"
+            transform="translate(0 8)" fill="url(#keyGloss)"/>
+
+      <!-- Symbole flèche Entrée ↵ -->
+      <g transform="translate(120 50)" stroke="#1A1612" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Flèche qui descend puis revient -->
+        <path d="M0 0 L0 80 M0 80 L60 80 M0 80 L34 48"/>
+      </g>
+    </g>
+
+    <!-- Mot-symbole KOMANDA -->
+    <g transform="translate(520 0)">
+      <text x="0" y="155"
+            font-family="'Bricolage Grotesque', 'Bricolage', system-ui, sans-serif"
+            font-size="138" font-weight="800" letter-spacing="-5" fill="#15110C">Komanda</text>
+      <!-- Tagline -->
+      <text x="4" y="205"
+            font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+            font-size="26" font-weight="700" letter-spacing="3" fill="#15110C" opacity="0.55">ENTRER · COMMANDER · LIVRER</text>
+    </g>
+  </g>
+
+  <!-- ============ VARIANTE 2 : PICTO SEUL (pour favicon/app) ============ -->
+  <g id="logo-mark" transform="translate(700 40)" filter="url(#softShadow)">
+    <!-- Base -->
+    <path d="M0 30 L0 170 Q0 190 20 190 L180 190 Q200 190 200 170 L200 90 L260 90 L260 170 Q260 190 280 190 L340 190 Q360 190 360 170 L360 20 Q360 0 340 0 L20 0 Q0 0 0 20 Z"
+          fill="#B87E0C"/>
+    <!-- Dessus -->
+    <path d="M0 16 L0 158 Q0 178 20 178 L180 178 Q200 178 200 158 L200 78 L260 78 L260 158 Q260 178 280 178 L340 178 Q360 178 360 158 L360 6 Q360 -14 340 -14 L20 -14 Q0 -14 0 6 Z"
+          transform="translate(0 6)" fill="url(#keyTop)"/>
+    <!-- Brillant -->
+    <path d="M0 16 L0 158 Q0 178 20 178 L180 178 Q200 178 200 158 L200 78 L260 78 L260 158 Q260 178 280 178 L340 178 Q360 178 360 158 L360 6 Q360 -14 340 -14 L20 -14 Q0 -14 0 6 Z"
+          transform="translate(0 6)" fill="url(#keyGloss)"/>
+    <!-- Flèche -->
+    <g transform="translate(95 46)" stroke="#1A1612" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M0 0 L0 68 M0 68 L50 68 M0 68 L30 40"/>
+    </g>
+  </g>
+</svg>

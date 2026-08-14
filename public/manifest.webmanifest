@@ -1,0 +1,16 @@
+{
+  "name": "Komanda — par Moyi Tech",
+  "short_name": "Komanda",
+  "description": "Commande ton site web, ton application ou ton agent IA. Paiement Mobile Money, livraison en 72h.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#FFD23F",
+  "theme_color": "#15110C",
+  "categories": ["business", "productivity", "shopping"],
+  "icons": [
+    { "src": "/logo-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

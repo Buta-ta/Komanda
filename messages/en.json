@@ -1,0 +1,364 @@
+{
+  "common": {
+    "brand": "Komanda",
+    "tagline": "ENTER · ORDER · DELIVERED",
+    "order": "Order now",
+    "configure": "Configure my order",
+    "seeOffers": "See offers",
+    "quote": "Request a quote",
+    "talkAdvisor": "Talk to an advisor",
+    "from": "from",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "once": "",
+    "whatsapp": "Chat on WhatsApp",
+    "back": "Back",
+    "continue": "Continue",
+    "pay": "Pay with Fedapay",
+    "byMoyiTech": "A Moyi Tech service · RCCM RB/COT/26 A 117584 · Benin",
+    "paymentSecure": "Secure payment via Fedapay · Orange · MTN · Moov · Wave",
+    "countries": "Benin · Ivory Coast · Senegal · Cameroon · Congo"
+  },
+  "nav": {
+    "offers": "Offers",
+    "showroom": "Showroom",
+    "agent": "AI Agent",
+    "audit": "Audit",
+    "tracking": "Track order",
+    "login": "Sign in",
+    "order": "Order",
+    "admin": "Admin"
+  },
+  "film": {
+    "scroll": "Scroll to push",
+    "badge": "Sites · Apps · Agents · Audits",
+    "title1": "Your site,",
+    "title2": "delivered in 72h.",
+    "subtitle": "They push the old web out. You press Enter.",
+    "cta": "Configure my order",
+    "quote": "Request a quote",
+    "howEyebrow": "How it works",
+    "howTitle1": "Order your site,",
+    "howTitle2": "like a meal.",
+    "how1": "01 — Configure. Price updates live.",
+    "how2": "02 — Pay. Orange, MTN, Moov, Wave.",
+    "how3": "03 — Receive. 72 hours.",
+    "offersEyebrow": "Offers",
+    "offersTitle1": "Four products.",
+    "offersTitle2": "One button.",
+    "compose": "Build it",
+    "seeOffers": "See offers",
+    "showEyebrow": "Showroom",
+    "showTitle": "Already delivered.",
+    "showSub": "Cotonou, Abidjan, Dakar, Douala. Sites that take orders.",
+    "showAll": "See all →",
+    "agentEyebrow": "AI Agent",
+    "agentTitle1": "While you sleep,",
+    "agentTitle2": "your agent sells.",
+    "agentCta": "Activate the agent",
+    "agentDemo": "Watch the demo",
+    "auditEyebrow": "Audit",
+    "auditTitle1": "We open the hood.",
+    "auditTitle2": "No jargon.",
+    "auditCta": "See the audit",
+    "ctaTitle1": "Ready to press",
+    "ctaTitle2": "Enter?",
+    "ctaSub": "Configure. Pay with Mobile Money. We deliver.",
+    "talk": "Talk to an advisor"
+  },
+  "offersPage": {
+    "eyebrow": "Catalogue",
+    "title": "The offers.",
+    "subtitle": "Four bases, packs, extras. One button.",
+    "bases": "Bases",
+    "packs": "Recommended packs",
+    "extras": "Extras",
+    "compose": "Build it",
+    "from": "from",
+    "popular": "Popular",
+    "saving": "You save {amount}"
+  },
+  "catalog": {
+    "bases": {
+      "vitrine": { "name": "Landing", "tagline": "A modern, fast site that converts." },
+      "vitrine-3d": { "name": "3D Motion", "tagline": "The wow of a premium site." },
+      "app": { "name": "Application", "tagline": "An app that takes orders." },
+      "audit": { "name": "Audit", "tagline": "We open the hood of your site or app." }
+    }
+  },
+    "hero": {
+    "badge": "Sites · Apps · Agents · Audits",
+    "title1": "Your website,",
+    "title2": "delivered in 72h.",
+    "subtitle": "Pick a base, add extras, pay with Mobile Money. We push the old screens away. We deliver.",
+    "scroll": "Scroll to push",
+    "login": "Sign in",
+    "quote": "Request a quote",
+    "navOffers": "Offers",
+    "navShowroom": "Showroom",
+    "navAgent": "AI Agent",
+    "navTracking": "Track order",
+    "navOrder": "Order now",
+    "cta": "Configure my order",
+   
+    "prices": {
+      "vitrine": "Landing from 10,000 CFA",
+      "motion": "3D Motion from 15,000 CFA",
+      "agent": "WhatsApp agent 5,000/month"
+    }
+  },
+  "trust": {
+    "text": "100% secure payment via Fedapay · Mobile Money"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Order your website, like a meal.",
+    "subtitle": "Three steps, a few clicks, and your website is live. No endless wait, no jargon.",
+    "steps": {
+      "configure": {
+        "title": "Configure your order",
+        "desc": "Pick a base, add extras. The price updates live."
+      },
+      "pay": {
+        "title": "Pay with Mobile Money",
+        "desc": "Orange, MTN, Moov, Wave, card via Fedapay. Instant confirmation."
+      },
+      "delivery": {
+        "title": "Receive in 72h",
+        "desc": "We build your site, you review the draft, we publish. Delivered."
+      }
+    }
+  },
+  "offers": {
+    "eyebrow": "Our offers",
+    "title": "An unbeatable starting price.",
+    "popular": "Popular",
+    "base": "Base",
+    "premium": "Premium base",
+    "subscription": "Subscription",
+    "choose": "Choose",
+    "activate": "Activate agent",
+    "products": {
+      "vitrine": { "name": "Landing page" },
+      "vitrine-3d-motion": { "name": "3D Motion Landing" },
+      "agent-whatsapp": { "name": "WhatsApp AI Agent" }
+    }
+  },
+  "showroom": {
+    "eyebrow": "Showroom",
+    "title": "What we've already delivered.",
+    "subtitle": "Websites, stores and AI agents already working for entrepreneurs across West and Central Africa.",
+    "filters": {
+      "all": "All",
+      "vitrine": "Landing pages",
+      "3d": "3D Motion",
+      "ecommerce": "E-commerce",
+      "agent": "AI Agents"
+    },
+    "nextProject": "Your project could be the next one.",
+    "startMine": "Start mine"
+  },
+  "agent": {
+    "eyebrow": "WhatsApp AI Agent",
+    "price": "5,000 CFA/month",
+    "title": "Your AI sales rep that never sleeps.",
+    "subtitle": "An agent on WhatsApp that greets, answers, takes orders and books appointments, 24/7.",
+    "features": [
+      "Natural replies in English",
+      "Automatic orders",
+      "Cart reminders",
+      "Alerts you when needed",
+      "Connected to Komanda",
+      "Dashboard"
+    ],
+    "cta": "Activate for 5,000 CFA/month",
+    "demo": "Watch a demo"
+  },
+  "supplements": {
+    "eyebrow": "Extras",
+    "title": "Everything you need, when you need it.",
+    "subtitle": "Like ordering food: pick the base, add ingredients. Fully managed by you.",
+    "viewAll": "View all extras"
+  },
+  "finalCta": {
+    "title": "Ready to order your website?",
+    "subtitle": "Join entrepreneurs across West and Central Africa already selling online with Komanda.",
+    "configure": "Configure my order",
+    "talk": "Talk to an advisor"
+  },
+  "footer": {
+    "tagline": "Order your website, app or AI agent — delivered in 72h, across Africa.",
+    "columns": {
+      "products": "Products",
+      "company": "Company",
+      "countries": "Countries"
+    },
+    "links": {
+      "vitrine": "Landing page",
+      "motion": "3D Motion site",
+      "agent": "WhatsApp AI Agent",
+      "supplements": "Extras",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact",
+      "tracking": "Track order",
+      "benin": "Benin",
+      "civ": "Ivory Coast",
+      "senegal": "Senegal",
+      "cameroon": "Cameroon"
+    }
+  },
+  "configurateur": {
+    "title": "Build your order.",
+    "subtitle": "Pick a base, add extras. Price updates live.",
+    "step1": "Configuration",
+    "step2": "Contact details",
+    "step3": "Payment",
+    "cancel": "Cancel",
+    "packs": "Recommended packs",
+    "chooseBase": "1. Choose your base",
+    "addSupplements": "2. Add extras",
+    "summary": "Your order",
+    "noSupplements": "No extras yet.",
+    "once": "One-time",
+    "monthly": "Monthly subscription",
+    "yearly": "Yearly",
+    "total": "Total",
+    "deliveryNote": "Delivered in 72h after payment and receiving your content.",
+    "addAgent": "Add the WhatsApp AI Agent (5,000 CFA/month)",
+    "contact": {
+      "title": "Your contact details",
+      "subtitle": "We send confirmation and order tracking by WhatsApp and email.",
+      "fullName": "Full name *",
+      "phone": "Phone / WhatsApp *",
+      "email": "Email *",
+      "country": "Country",
+      "notes": "About your project (optional)"
+    },
+    "payment": {
+      "title": "Secure payment",
+      "subtitle": "You will be redirected to Fedapay. Nothing is charged until payment is confirmed.",
+      "product": "Product",
+      "supplements": "Extras",
+      "onceTotal": "Amount to pay",
+      "plusMonthly": "+ {amount}/month (subscription)",
+      "demoNote": "MVP demo mode: Fedapay will be wired up with your API keys.",
+      "productValue": "{baseName} + {count} extras"
+    }
+  },
+  "agentPage": {
+    "title": "Your AI sales rep that never sleeps.",
+    "subtitle": "Komanda connects an AI agent directly to WhatsApp. It greets, answers, takes orders and books appointments, 24/7, in English.",
+    "howItWorks": "How it works",
+    "items": {
+      "chat": { "title": "It chats", "desc": "On WhatsApp, like a natural salesperson. It understands questions, even the messy ones." },
+      "notify": { "title": "It notifies you", "desc": "When an order or appointment is taken, you get an alert. You confirm in one tap." },
+      "report": { "title": "It reports to you", "desc": "Each week, a report: conversations, sales, frequent questions." }
+    },
+    "activate": "Activate for 5,000 CFA/month",
+    "requestDemo": "Request a demo"
+  },
+  "tracking": {
+    "title": "Track your order",
+    "subtitle": "Enter the 6-character code sent by WhatsApp and email after payment.",
+    "placeholder": "e.g. KMD-7X2P",
+    "button": "Track",
+    "statuses": {
+      "PENDING_PAYMENT": "Awaiting payment",
+      "PAID": "Payment received",
+      "ONBOARDING": "Awaiting your information",
+      "IN_PRODUCTION": "In production",
+      "IN_REVIEW": "In review",
+      "DELIVERED": "Delivered",
+      "CANCELLED": "Cancelled",
+      "REFUNDED": "Refunded"
+    },
+    "descriptions": {
+      "PENDING_PAYMENT": "Payment needs to be confirmed to start production.",
+      "PAID": "Payment confirmed, we're preparing your order.",
+      "ONBOARDING": "We need your content (logo, texts, images).",
+      "IN_PRODUCTION": "Our team is building your site with AI.",
+      "IN_REVIEW": "The draft is ready, you can request adjustments.",
+      "DELIVERED": "Your site is live. Congratulations!",
+      "CANCELLED": "Order cancelled.",
+      "REFUNDED": "Order refunded."
+    },
+    "delivered": "🎉 Your site is live! Access has been sent to your email.",
+    "demoNote": "MVP demo: any code will simulate a status."
+  },
+  "quote": {
+    "title": "Request a quote",
+    "subtitle": "For complex projects, tell us what you need. We reply within 24h.",
+    "fullName": "Full name *",
+    "phone": "Phone / WhatsApp *",
+    "email": "Email *",
+    "projectType": "Project type",
+    "budget": "Estimated budget",
+    "message": "Describe your project",
+    "send": "Send my request",
+    "success": {
+      "title": "Request sent!",
+      "subtitle": "Thanks {name}. A Komanda advisor will reach out within 24h by WhatsApp or email.",
+      "back": "Back to home"
+    }
+  },
+  "admin": {
+    "login": "Admin area",
+    "loginSubtitle": "Reserved for the Komanda team.",
+    "password": "Password",
+    "loginButton": "Sign in",
+    "logout": "Sign out",
+    "tabs": {
+      "dash": "Dashboard",
+      "bases": "Bases",
+      "supplements": "Extras",
+      "packs": "Packs",
+      "showroom": "Showroom",
+      "settings": "Settings"
+    },
+    "welcome": "Welcome 👋",
+    "kpis": { "products": "Products", "minPrice": "Starting price", "countries": "Countries covered" },
+    "nextSteps": "Back-office next steps"
+  }
+
+
+  ,
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginSubtitle": "Access your orders, invoices and subscriptions.",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or",
+    "continueAsGuest": "Continue without account",
+    "byContinuing": "By continuing you agree to our terms.",
+    "loginError": "Sign-in failed. Please try again."
+  },
+  "account": {
+    "hello": "Hi",
+    "welcomeBack": "Welcome back.",
+    "signout": "Sign out",
+    "orders": "Orders",
+    "invoices": "Invoices",
+    "subscription": "Subscription",
+    "myOrders": "My orders",
+    "noOrders": "You don't have any orders yet.",
+    "startOrder": "Start an order",
+    "status_PENDING_PAYMENT": "Awaiting payment",
+    "status_PAID": "Paid",
+    "status_ONBOARDING": "Awaiting information",
+    "status_IN_PRODUCTION": "In production",
+    "status_IN_REVIEW": "In review",
+    "status_DELIVERED": "Delivered",
+    "status_CANCELLED": "Cancelled",
+    "status_REFUNDED": "Refunded"
+  }
+
+
+  ,
+  "adminLogin": {
+    "title": "Team area",
+    "subtitle": "Komanda team only. Sign in with your work Google account.",
+    "continueWithGoogle": "Continue with Google",
+    "back": "Back to website",
+    "securityNote": "Restricted area. Unauthorized access is logged."
+  }
+}

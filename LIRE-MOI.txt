@@ -1,0 +1,28 @@
+KOMANDA — tester en local
+=========================
+
+1. Installe Node.js 20 ou 22 : https://nodejs.org
+2. Dézippe ce dossier.
+3. Dans le terminal :
+
+   cd Komanda
+   npm install
+   npm run dev
+
+4. Ouvre http://localhost:3000
+5. Scrolle. C’est un film 3D (pas une page marketing empilée).
+
+Si `npm install` râle sur Prisma, c’est normal s’il n’y a pas de Postgres.
+Le film de la homepage n’en a pas besoin. Relance `npm run dev`.
+
+prefers-reduced-motion (accessibilité OS) → repli 2D automatique.
+
+Le film est dans src/components/film/
+Les 94 frames sont dans public/hero-push/
+Chat / chien / clavier : public/film/
+
+Langue : bouton FR / EN dans la nav. Anglais = /en
+Offres : /offres  et  /en/offres
+Admin : /admin  mot de passe `komanda`
+        change les prix → Enregistrer → data/store.json
+        le film, /offres et le configurateur lisent ce fichier.
