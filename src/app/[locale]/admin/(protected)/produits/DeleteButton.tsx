@@ -1,13 +1,11 @@
 "use client";
 
-import { deleteProduct } from "../actions/catalog";
-
-export function DeleteButton({ locale, id }: { locale: string; id: string }) {
+export function DeleteButton({ id }: { locale: string; id: string }) {
   return (
     <form
-      action={deleteProduct.bind(null, locale, id)}
       onSubmit={(e) => {
-        if (!window.confirm("Supprimer ce produit ?")) e.preventDefault();
+        e.preventDefault();
+        alert("La suppression sera disponible dans le prochain écran d'admin.");
       }}
     >
       <button

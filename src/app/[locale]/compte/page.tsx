@@ -1,25 +1,27 @@
+// ============================================================
+// À remplacer : src/app/[locale]/compte/page.tsx (plus AUCUN prisma)
+// ============================================================
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
 import { Logo } from "@/components/Logo";
 import { Package, FileText, CreditCard, LogOut } from "lucide-react";
 
 type OrderRow = {
   id: string;
   reference: string;
-  createdAt: Date;
+  createdAt: string;
   total: number;
-  status:
-    | "PENDING_PAYMENT"
-    | "PAID"
-    | "ONBOARDING"
-    | "IN_PRODUCTION"
-    | "IN_REVIEW"
-    | "DELIVERED"
-    | "CANCELLED"
-    | "REFUNDED";
+  status: string;
+};
+
+type CustomerRow = {
+  id: string;
+  email: string | null;
+  fullName: string | null;
+  avatarUrl: string | null;
+  Order?: OrderRow[];
 };
 
 function formatPrice(amount: number) {
@@ -35,25 +37,26 @@ export default async function AccountPage() {
 
   if (!user) redirect("/fr/login");
 
-  let customer = await prisma.customer.findUnique({
-    where: { id: user.id },
-    include: { orders: { orderBy: { createdAt: "desc" as const }, take: 10 } },
-  });
+  let customer = await fetchCustomer(supabase, user.id);
 
   if (!customer) {
-    customer = await prisma.customer.create({
-      data: {
+    const now = new Date().toISOString();
+    await supabase.from("Customer").upsert(
+      {
         id: user.id,
         email: user.email ?? null,
         fullName: (user.user_metadata?.full_name as string) ?? null,
         avatarUrl: (user.user_metadata?.avatar_url as string) ?? null,
         isGuest: false,
+        createdAt: now,
+        updatedAt: now,
       },
-      include: { orders: { orderBy: { createdAt: "desc" as const }, take: 10 } },
-    });
+      { onConflict: "id" }
+    );
+    customer = await fetchCustomer(supabase, user.id);
   }
 
-  const orders = customer.orders as unknown as OrderRow[];
+  const orders: OrderRow[] = customer?.Order ?? [];
 
   return (
     <main className="min-h-screen bg-komanda-cream">
@@ -72,7 +75,7 @@ export default async function AccountPage() {
 
       <div className="mx-auto max-w-5xl px-5 py-10">
         <div className="flex items-center gap-4">
-          {customer.avatarUrl ? (
+          {customer?.avatarUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={customer.avatarUrl}
@@ -81,29 +84,21 @@ export default async function AccountPage() {
             />
           ) : (
             <div className="grid h-16 w-16 place-items-center rounded-full bg-komanda-yellow font-display text-2xl font-extrabold text-komanda-charcoal">
-              {(customer.fullName || customer.email || "?").charAt(0).toUpperCase()}
+              {(customer?.fullName || customer?.email || "?").charAt(0).toUpperCase()}
             </div>
           )}
           <div>
             <h1 className="font-display text-3xl font-extrabold text-komanda-charcoal">
-              {t("hello")}, {customer.fullName || customer.email}
+              {t("hello")}, {customer?.fullName || customer?.email}
             </h1>
             <p className="text-sm text-komanda-charcoal/60">{t("welcomeBack")}</p>
           </div>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <Stat
-            icon={<Package size={20} />}
-            label={t("orders")}
-            value={String(orders.length)}
-          />
+          <Stat icon={<Package size={20} />} label={t("orders")} value={String(orders.length)} />
           <Stat icon={<FileText size={20} />} label={t("invoices")} value="0" />
-          <Stat
-            icon={<CreditCard size={20} />}
-            label={t("subscription")}
-            value="—"
-          />
+          <Stat icon={<CreditCard size={20} />} label={t("subscription")} value="—" />
         </div>
 
         <section className="mt-10">
@@ -128,17 +123,13 @@ export default async function AccountPage() {
                   className="flex items-center justify-between border-b border-komanda-charcoal/5 p-4 last:border-0"
                 >
                   <div>
-                    <div className="font-bold text-komanda-charcoal">
-                      #{o.reference}
-                    </div>
+                    <div className="font-bold text-komanda-charcoal">#{o.reference}</div>
                     <div className="text-xs text-komanda-charcoal/50">
                       {new Date(o.createdAt).toLocaleDateString("fr-FR")}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-komanda-charcoal">
-                      {formatPrice(o.total)}
-                    </div>
+                    <div className="font-bold text-komanda-charcoal">{formatPrice(o.total)}</div>
                     <span className="rounded-full bg-komanda-cream px-2.5 py-1 text-[11px] font-bold text-komanda-charcoal/70">
                       {t(`status_${o.status}`)}
                     </span>
@@ -151,6 +142,17 @@ export default async function AccountPage() {
       </div>
     </main>
   );
+}
+
+async function fetchCustomer(supabase: Awaited<ReturnType<typeof createClient>>, userId: string) {
+  const { data } = await supabase
+    .from("Customer")
+    .select('id, email, "fullName", "avatarUrl", Order(id, reference, total, status, "createdAt")')
+    .eq("id", userId)
+    .order("createdAt", { referencedTable: "Order", ascending: false })
+    .limit(10, { referencedTable: "Order" })
+    .maybeSingle();
+  return (data as CustomerRow | null) ?? null;
 }
 
 function Stat({
@@ -168,9 +170,7 @@ function Stat({
         {icon}
       </div>
       <div>
-        <div className="font-display text-2xl font-extrabold text-komanda-charcoal">
-          {value}
-        </div>
+        <div className="font-display text-2xl font-extrabold text-komanda-charcoal">{value}</div>
         <div className="text-xs text-komanda-charcoal/60">{label}</div>
       </div>
     </div>

@@ -86,7 +86,7 @@
       "audit": { "name": "Audit", "tagline": "We open the hood of your site or app." }
     }
   },
-    "hero": {
+  "hero": {
     "badge": "Sites · Apps · Agents · Audits",
     "title1": "Your website,",
     "title2": "delivered in 72h.",
@@ -100,7 +100,6 @@
     "navTracking": "Track order",
     "navOrder": "Order now",
     "cta": "Configure my order",
-   
     "prices": {
       "vitrine": "Landing from 10,000 CFA",
       "motion": "3D Motion from 15,000 CFA",
@@ -224,8 +223,25 @@
     "monthly": "Monthly subscription",
     "yearly": "Yearly",
     "total": "Total",
-    "deliveryNote": "Delivered in 72h after payment and receiving your content.",
+    "deliveryNote": "after payment and receiving your content.",
     "addAgent": "Add the WhatsApp AI Agent (5,000 CFA/month)",
+    "popular": "Popular",
+    "saved": "You save {amount}",
+    "selection": "{count} added",
+    "mandatory": "Name, email and WhatsApp are required.",
+    "basePrefix": "Base · {name}",
+    "inMonth": "/month",
+    "inYear": "/year",
+    "proceed": "Proceed to payment",
+    "step1Sub": "Pick a base, add extras. The preview on the right follows your choices.",
+    "categories": {
+      "contenu": "Content & branding",
+      "technique": "Technical & hosting",
+      "fonctionnalites": "Features",
+      "ecommerce": "E-commerce",
+      "ia": "Artificial intelligence",
+      "visibilite": "Visibility & growth"
+    },
     "contact": {
       "title": "Your contact details",
       "subtitle": "We send confirmation and order tracking by WhatsApp and email.",
@@ -242,14 +258,22 @@
       "supplements": "Extras",
       "onceTotal": "Amount to pay",
       "plusMonthly": "+ {amount}/month (subscription)",
-      "demoNote": "MVP demo mode: Fedapay will be wired up with your API keys.",
-      "productValue": "{baseName} + {count} extras"
+      "demoNote": "MVP demo mode: Fedapay will be wired up with your API keys."
     }
   },
   "agentPage": {
     "title": "Your AI sales rep that never sleeps.",
     "subtitle": "Komanda connects an AI agent directly to WhatsApp. It greets, answers, takes orders and books appointments, 24/7, in English.",
     "howItWorks": "How it works",
+    "mock": {
+      "boutique": "Komanda · Shop",
+      "online": "online",
+      "hello": "Good evening 👋 Welcome! Are you ordering?",
+      "order": "I want 2 premium shirts",
+      "size": "Perfect 👔 Size M, L or XL? Color?",
+      "sizes": "L, white and blue",
+      "delivery": "Got it! Delivery to which area?"
+    },
     "items": {
       "chat": { "title": "It chats", "desc": "On WhatsApp, like a natural salesperson. It understands questions, even the messy ones." },
       "notify": { "title": "It notifies you", "desc": "When an order or appointment is taken, you get an alert. You confirm in one tap." },
@@ -258,11 +282,35 @@
     "activate": "Activate for 5,000 CFA/month",
     "requestDemo": "Request a demo"
   },
+  "audit": {
+    "metaTitle": "Website & app audit",
+    "eyebrow": "Audit · {price} · 72h",
+    "title1": "We open the hood of your site",
+    "title2": "or your app.",
+    "subtitle": "Not an 80-page PDF. A useful scan: what blocks your customers, what costs you in ads, what to fix first.",
+    "order": "Order the audit",
+    "sendUrl": "Send my URL",
+    "scanLabel": "komanda scan",
+    "metrics": {
+      "mobile": "Mobile performance",
+      "purchase": "Purchase flow",
+      "seo": "Local SEO",
+      "security": "Security / HTTPS",
+      "a11y": "Accessibility"
+    },
+    "scoreNote": "Example score — yours will be yours.",
+    "steps": [
+      { "t": "We click like a customer", "d": "Mobile first. We measure time, frictions, pages that lose money." },
+      { "t": "We prioritize", "d": "Not 200 recos. 8 ranked actions: impact × effort. You know where to start Monday." },
+      { "t": "We can fix it", "d": "The audit becomes a Landing, 3D or App order. One button away." }
+    ]
+  },
   "tracking": {
     "title": "Track your order",
     "subtitle": "Enter the 6-character code sent by WhatsApp and email after payment.",
     "placeholder": "e.g. KMD-7X2P",
     "button": "Track",
+    "order": "Order {code}",
     "statuses": {
       "PENDING_PAYMENT": "Awaiting payment",
       "PAID": "Payment received",
@@ -319,10 +367,7 @@
     "welcome": "Welcome 👋",
     "kpis": { "products": "Products", "minPrice": "Starting price", "countries": "Countries covered" },
     "nextSteps": "Back-office next steps"
-  }
-
-
-  ,
+  },
   "auth": {
     "loginTitle": "Sign in",
     "loginSubtitle": "Access your orders, invoices and subscriptions.",
@@ -350,10 +395,7 @@
     "status_DELIVERED": "Delivered",
     "status_CANCELLED": "Cancelled",
     "status_REFUNDED": "Refunded"
-  }
-
-
-  ,
+  },
   "adminLogin": {
     "title": "Team area",
     "subtitle": "Komanda team only. Sign in with your work Google account.",

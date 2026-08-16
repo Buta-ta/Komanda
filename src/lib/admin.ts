@@ -1,11 +1,15 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
+import { createAdminClient } from "@/lib/supabase/admin";
 
-/**
- * À appeler au tout début de chaque page admin (server component).
- * Redirige vers le PORTAIL ADMIN DÉDIÉ, pas le portail client.
- */
+export type AdminCustomer = {
+  id: string;
+  email: string | null;
+  fullName: string | null;
+  isAdmin: boolean;
+};
+
+/** À appeler au début de chaque page admin (server component). */
 export async function requireAdmin(locale = "fr") {
   const supabase = await createClient();
   const {
@@ -14,14 +18,17 @@ export async function requireAdmin(locale = "fr") {
 
   if (!user) redirect(`/${locale}/admin/login`);
 
-  const customer = await prisma.customer.findUnique({
-    where: { id: user.id },
-    select: { id: true, isAdmin: true, email: true, fullName: true },
-  });
+  // Lecture via service_role : indépendant des droits anon / RLS.
+  const admin = createAdminClient();
+  const { data: customer } = await admin
+    .from("Customer")
+    .select('id, email, "fullName", "isAdmin"')
+    .eq("id", user.id)
+    .maybeSingle();
 
   if (!customer?.isAdmin) redirect(`/${locale}/admin/login?error=forbidden`);
 
-    return { user, customer, locale };
+  return { user, customer: customer as AdminCustomer, locale };
 }
 
 /** Pour les API routes : renvoie null si pas admin. */
@@ -32,9 +39,12 @@ export async function getAdminUser() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const customer = await prisma.customer.findUnique({
-    where: { id: user.id },
-    select: { id: true, isAdmin: true },
-  });
+  const admin = createAdminClient();
+  const { data: customer } = await admin
+    .from("Customer")
+    .select('id, "isAdmin"')
+    .eq("id", user.id)
+    .maybeSingle();
+
   return customer?.isAdmin ? user : null;
 }

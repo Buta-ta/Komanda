@@ -1,6 +1,10 @@
+// ============================================================
+// À remplacer : src/app/[locale]/auth/admin-callback/route.ts
+// Vérifie isAdmin via le client service_role (bypass anon/RLS).
+// ============================================================
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function GET(
   request: Request,
@@ -26,10 +30,13 @@ export async function GET(
     return NextResponse.redirect(`${origin}/${locale}/admin/login?error=auth`);
   }
 
-  const customer = await prisma.customer.findUnique({
-    where: { id: user.id },
-    select: { isAdmin: true },
-  });
+  // Vérification via service_role : indépendant des droits anon / RLS.
+  const admin = createAdminClient();
+  const { data: customer } = await admin
+    .from("Customer")
+    .select('id, "isAdmin"')
+    .eq("id", user.id)
+    .maybeSingle();
 
   if (!customer?.isAdmin) {
     await supabase.auth.signOut();

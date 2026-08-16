@@ -5,11 +5,12 @@ import {
   LayoutDashboard,
   Package,
   Tags,
+  Tag,
   Layers,
+  FolderTree,
   Image as ImageIcon,
   ShoppingBag,
   Users,
-  MessageSquare,
   Settings,
   LogOut,
 } from "lucide-react";
@@ -17,12 +18,14 @@ import {
 const NAV = [
   { href: "/admin", label: "Tableau de bord", icon: LayoutDashboard },
   { href: "/admin/produits", label: "Bases & produits", icon: Package },
+  { href: "/admin/categories", label: "Catégories", icon: FolderTree },
+  { href: "/admin/tags", label: "Tags", icon: Tag },
+  { href: "/admin/groupes", label: "Groupes", icon: Layers },
   { href: "/admin/supplements", label: "Suppléments", icon: Tags },
   { href: "/admin/packs", label: "Packs", icon: Layers },
   { href: "/admin/showroom", label: "Showroom", icon: ImageIcon },
   { href: "/admin/commandes", label: "Commandes", icon: ShoppingBag },
   { href: "/admin/clients", label: "Clients", icon: Users },
-  { href: "/admin/messages", label: "Messages", icon: MessageSquare },
   { href: "/admin/parametres", label: "Paramètres", icon: Settings },
 ];
 
