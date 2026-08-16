@@ -5,13 +5,9 @@ import {
   LayoutDashboard,
   Package,
   Tags,
-<<<<<<< HEAD
   Tag,
   Layers,
   FolderTree,
-=======
-  Layers,
->>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   Image as ImageIcon,
   ShoppingBag,
   Users,
@@ -22,12 +18,9 @@ import {
 const NAV = [
   { href: "/admin", label: "Tableau de bord", icon: LayoutDashboard },
   { href: "/admin/produits", label: "Bases & produits", icon: Package },
-<<<<<<< HEAD
   { href: "/admin/categories", label: "Catégories", icon: FolderTree },
   { href: "/admin/tags", label: "Tags", icon: Tag },
   { href: "/admin/groupes", label: "Groupes", icon: Layers },
-=======
->>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   { href: "/admin/supplements", label: "Suppléments", icon: Tags },
   { href: "/admin/packs", label: "Packs", icon: Layers },
   { href: "/admin/showroom", label: "Showroom", icon: ImageIcon },
@@ -82,8 +75,4 @@ export default async function AdminLayout({
       </div>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
