@@ -9,17 +9,29 @@
     "lint": "eslint",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
+<<<<<<< HEAD
     "db:studio": "prisma studio"
+=======
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@prisma/client": "^6.19.3",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
+<<<<<<< HEAD
     "cloudinary": "^2.10.0",
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "dotenv": "^17.4.2",
     "framer-motion": "^13.1.0",
     "lenis": "^1.3.17",
@@ -32,13 +44,21 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+<<<<<<< HEAD
     "@types/node": "^20.19.43",
+=======
+    "@types/node": "^20",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.185.4",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
+<<<<<<< HEAD
     "supabase": "^2.114.0",
+=======
+    "prisma": "^6.19.3",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5"

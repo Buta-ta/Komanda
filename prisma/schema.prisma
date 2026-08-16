@@ -1,0 +1,321 @@
+// Komanda — schéma Prisma
+// Base : Supabase PostgreSQL.
+// L'auth Google + invité est gérée par Supabase Auth ; la table `Customer`
+// complète le profil (`id` = user.id Supabase).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================================
+// CATALOGUE (éditable depuis l'admin)
+// ============================================================
+
+enum ProductType {
+  BASE         // Site vitrine / 3D
+  SUPPLEMENT   // Supplément
+  PACK         // Pack pré-composé
+  AGENT        // Agent IA (abonnement)
+  APP          // Application / sur-mesure (devis)
+}
+
+enum PriceType {
+  ONCE
+  MONTHLY
+  YEARLY
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+model Product {
+  id          String        @id @default(cuid())
+  type        ProductType
+  name        String
+  slug        String        @unique
+  tagline     String?
+  description String?       @db.Text
+  price       Int           // en FCFA, 0 si devis
+  priceType   PriceType     @default(ONCE)
+  currency    String        @default("XOF")
+  emoji       String?
+  coverUrl    String?
+  category    String?       // ex: contenu, technique, ecommerce, ia, visibilite
+  features    String[]      @default([])
+  status      ProductStatus @default(ACTIVE)
+  order       Int           @default(0)
+  // Pour les PACKS : liste de produits inclus (base + suppléments)
+  packItems   PackItem[]    @relation("PackContents")
+  itemsInPack PackItem[]    @relation("PackItems")
+  // Références dans les commandes
+  orderItems  OrderItem[]
+  // Projets showroom liés
+  projects    Project[]
+  // Abonnements
+  subscriptions Subscription[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([type, status])
+}
+
+model PackItem {
+  id        String  @id @default(cuid())
+  pack      Product @relation("PackContents", fields: [packId], references: [id], onDelete: Cascade)
+  packId    String
+  item      Product @relation("PackItems", fields: [itemId], references: [id])
+  itemId    String
+  quantity  Int     @default(1)
+
+  @@unique([packId, itemId])
+}
+
+// ============================================================
+// CLIENTS & AUTH
+// ============================================================
+
+model Customer {
+  id            String    @id            // = Supabase auth.users.id
+  email         String?   @unique
+  phone         String?   @unique
+  fullName      String?
+  company       String?
+  country       String?
+  city          String?
+  avatarUrl     String?
+  isGuest       Boolean   @default(false)
+  isAdmin       Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  orders        Order[]
+  subscriptions Subscription[]
+  invoices      Invoice[]
+
+  @@index([email])
+  @@index([phone])
+}
+
+// ============================================================
+// COMMANDES
+// ============================================================
+
+enum OrderStatus {
+  PENDING_PAYMENT   // commande créée, en attente de paiement
+  PAID              // paiement confirmé
+  ONBOARDING        // en attente des infos/contenu du client
+  IN_PRODUCTION     // en production
+  IN_REVIEW         // brouillon envoyé, en attente de validation
+  DELIVERED         // livré
+  CANCELLED
+  REFUNDED
+}
+
+model Order {
+  id              String       @id @default(cuid())
+  reference       String       @unique          // ex: KMD-7X2P9
+  customer        Customer?    @relation(fields: [customerId], references: [id])
+  customerId      String?
+  // Infos de contact en invité (si pas de compte)
+  guestEmail      String?
+  guestPhone      String?
+  guestName       String?
+  country         String?
+  status          OrderStatus  @default(PENDING_PAYMENT)
+  currency        String       @default("XOF")
+
+  // Montants en FCFA
+  onceTotal       Int          @default(0)
+  monthlyTotal    Int          @default(0)
+  yearlyTotal     Int          @default(0)
+  discountTotal   Int          @default(0)
+  total           Int          @default(0)
+
+  notes           String?      @db.Text
+  adminNotes      String?      @db.Text
+  utmSource       String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  paidAt          DateTime?
+
+  items           OrderItem[]
+  payments        Payment[]
+  invoices        Invoice[]
+  subscription    Subscription?
+  timeline        OrderEvent[]
+
+  @@index([status])
+  @@index([customerId])
+  @@index([reference])
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId     String
+  product     Product @relation(fields: [productId], references: [id])
+  productId   String
+  label       String            // snapshot du nom au moment de l'achat
+  description String?
+  unitPrice   Int
+  quantity    Int     @default(1)
+  priceType   PriceType
+  periodStart DateTime?
+  periodEnd   DateTime?
+
+  @@index([orderId])
+}
+
+model OrderEvent {
+  id        String   @id @default(cuid())
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   String
+  status    OrderStatus
+  message   String?
+  authorId  String?  // customer.id ou "admin"
+  createdAt DateTime @default(now())
+
+  @@index([orderId])
+}
+
+// ============================================================
+// PAIEMENTS (Fedapay)
+// ============================================================
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  ORANGE
+  MTN
+  MOOV
+  WAVE
+  CARD
+  BANK
+  OTHER
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  order           Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId         String
+  provider        String        @default("fedapay")
+  providerRef     String?       @unique   // transaction_key Fedapay
+  status          PaymentStatus @default(PENDING)
+  method          PaymentMethod?
+  amount          Int
+  currency        String        @default("XOF")
+  fees            Int           @default(0)
+  callbackPayload Json?
+  createdAt       DateTime      @default(now())
+  paidAt          DateTime?
+
+  @@index([orderId])
+}
+
+// ============================================================
+// FACTURES
+// ============================================================
+
+model Invoice {
+  id          String   @id @default(cuid())
+  number      String   @unique           // ex: INV-2026-0001
+  order       Order    @relation(fields: [orderId], references: [id])
+  orderId     String
+  customer    Customer @relation(fields: [customerId], references: [id])
+  customerId  String
+  amount      Int
+  currency    String   @default("XOF")
+  pdfUrl      String?
+  periodStart DateTime?
+  periodEnd   DateTime?
+  paidAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([orderId])
+  @@index([customerId])
+}
+
+// ============================================================
+// ABONNEMENTS (agent IA, maintenance, hébergement…)
+// ============================================================
+
+enum SubStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+  EXPIRED
+}
+
+model Subscription {
+  id           String    @id @default(cuid())
+  customer     Customer  @relation(fields: [customerId], references: [id])
+  customerId   String
+  order        Order?    @relation(fields: [orderId], references: [id])
+  orderId      String?   @unique
+  product      Product   @relation(fields: [productId], references: [id])
+  productId    String
+  status       SubStatus @default(ACTIVE)
+  amount       Int
+  interval     PriceType @default(MONTHLY)
+  startDate    DateTime  @default(now())
+  nextRenewal  DateTime
+  cancelledAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([customerId])
+  @@index([status])
+}
+
+// ============================================================
+// SHOWROOM
+// ============================================================
+
+model Project {
+  id          String     @id @default(cuid())
+  title       String
+  client      String?
+  sector      String?
+  country     String?
+  category    String?
+  year        Int
+  coverUrl    String?
+  gallery     String[]   @default([])
+  link        String?
+  description String?    @db.Text
+  tags        String[]   @default([])
+  featured    Boolean    @default(false)
+  order       Int        @default(0)
+  product     Product?   @relation(fields: [productId], references: [id])
+  productId   String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([category])
+  @@index([featured])
+}
+
+// ============================================================
+// PARAMÈTRES (clé/valeur pour l'admin)
+// ============================================================
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}

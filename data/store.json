@@ -7,6 +7,7 @@
     {
       "id": "vitrine",
       "name": "Vitrine",
+<<<<<<< HEAD
       "nameEn": "Landing",
       "price": 10000,
       "tagline": "Un site moderne, rapide, qui convertit.",
@@ -15,12 +16,19 @@
       "featuresEn": ["4–5 section site", "100% mobile responsive", "Contact form", "Delivered in 72h", "HTTPS & 1-year hosting"],
       "delay": "72h",
       "delayEn": "72h",
+=======
+      "price": 10000,
+      "tagline": "Un site moderne, rapide, qui convertit.",
+      "features": ["Site 4–5 sections", "100% responsive mobile", "Formulaire de contact", "Livré en 72h", "HTTPS & hébergement 1 an"],
+      "delay": "72h",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
       "kind": "site",
       "visible": true
     },
     {
       "id": "vitrine-3d",
       "name": "3D Motion",
+<<<<<<< HEAD
       "nameEn": "3D Motion",
       "price": 15000,
       "tagline": "L'effet waouh d'un site premium.",
@@ -30,12 +38,20 @@
       "popular": true,
       "delay": "72h",
       "delayEn": "72h",
+=======
+      "price": 15000,
+      "tagline": "L'effet waouh d'un site premium.",
+      "features": ["Tout l'offre Vitrine", "Scroll cinématique", "Micro-interactions", "Direction artistique sur-mesure", "Optimisé mobile & SEO"],
+      "popular": true,
+      "delay": "72h",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
       "kind": "site",
       "visible": true
     },
     {
       "id": "app",
       "name": "Application",
+<<<<<<< HEAD
       "nameEn": "Application",
       "price": 50000,
       "tagline": "Une app qui prend les commandes.",
@@ -44,12 +60,19 @@
       "featuresEn": ["PWA or mobile app", "Accounts & dashboard", "Mobile Money payment", "First build in 14 days", "Launch & training"],
       "delay": "14 jours",
       "delayEn": "14 days",
+=======
+      "price": 50000,
+      "tagline": "Une app qui prend les commandes.",
+      "features": ["PWA ou app mobile", "Comptes & tableau de bord", "Paiement Mobile Money", "Premier build en 14 jours", "Publication & formation"],
+      "delay": "14 jours",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
       "kind": "app",
       "visible": true
     },
     {
       "id": "audit",
       "name": "Audit",
+<<<<<<< HEAD
       "nameEn": "Audit",
       "price": 12000,
       "tagline": "On ouvre le capot de ton site ou de ton app.",
@@ -58,11 +81,18 @@
       "featuresEn": ["UX, perf, SEO, security", "Real mobile journey", "Score and priorities", "30-day action plan", "Report in 72h"],
       "delay": "72h",
       "delayEn": "72h",
+=======
+      "price": 12000,
+      "tagline": "On ouvre le capot de ton site ou de ton app.",
+      "features": ["UX, perf, SEO, sécurité", "Parcours mobile réel", "Score et priorités", "Plan d'action 30 jours", "Rapport livré en 72h"],
+      "delay": "72h",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
       "kind": "audit",
       "visible": true
     }
   ],
   "supplements": [
+<<<<<<< HEAD
     { "id": "logo", "name": "Logo & identité", "nameEn": "Logo & branding", "description": "Logo + couleurs + typographie", "descriptionEn": "Logo + colors + typography", "price": 15000, "priceType": "once", "category": "contenu", "emoji": "🎨" },
     { "id": "redaction", "name": "Rédaction de contenu", "nameEn": "Content writing", "description": "Textes qui vendent, adaptés à ton secteur", "descriptionEn": "Copy that sells, tailored to your sector", "price": 8000, "priceType": "once", "category": "contenu", "emoji": "📝" },
     { "id": "photos", "name": "Pack photos", "nameEn": "Photo pack", "description": "Banque d'images premium", "descriptionEn": "Premium stock images", "price": 5000, "priceType": "once", "category": "contenu", "emoji": "📸" },
@@ -96,5 +126,40 @@
     { "id": "ecole-lumiere", "title": "École La Lumière", "titleEn": "La Lumiere School", "client": "École privée", "sector": "Éducation", "sectorEn": "Education", "country": "Cameroun", "countryEn": "Cameroon", "category": "app", "year": 2026, "description": "App parents + site : filières, inscriptions, espace famille.", "descriptionEn": "Parent app + site: programs, enrollment, family space.", "tags": ["Application", "Inscription", "Multilingue"], "tagsEn": ["Application", "Enrollment", "Multilingual"], "cover": "/showroom/lumiere.jpg", "coverFrom": "#3D5AFE", "coverTo": "#22C55E", "featured": true },
     { "id": "pharmacie-soleil", "title": "Pharmacie du Soleil", "titleEn": "Pharmacie du Soleil", "client": "Pharmacie", "sector": "Santé", "sectorEn": "Health", "country": "Togo", "countryEn": "Togo", "category": "agent", "year": 2026, "description": "Agent IA WhatsApp pour la garde et les commandes.", "descriptionEn": "WhatsApp AI agent for on-call duty and orders.", "tags": ["Agent IA", "WhatsApp", "Santé"], "tagsEn": ["AI Agent", "WhatsApp", "Health"], "cover": "/showroom/pharmacie.jpg", "coverFrom": "#22C55E", "coverTo": "#16A34A", "featured": true },
     { "id": "studio-koa", "title": "Studio Koa", "titleEn": "Studio Koa", "client": "Studio de création", "sector": "Créatif", "sectorEn": "Creative", "country": "Congo", "countryEn": "Congo", "category": "audit", "year": 2026, "description": "Audit UX + refonte motion.", "descriptionEn": "UX audit + motion redesign.", "tags": ["Audit", "3D Motion", "Portfolio"], "tagsEn": ["Audit", "3D Motion", "Portfolio"], "cover": "/showroom/koa.jpg", "coverFrom": "#8B5CF6", "coverTo": "#EC4899", "featured": true }
+=======
+    { "id": "logo", "name": "Logo & identité", "description": "Logo + couleurs + typographie", "price": 15000, "priceType": "once", "category": "contenu", "emoji": "🎨" },
+    { "id": "redaction", "name": "Rédaction de contenu", "description": "Textes qui vendent, adaptés à ton secteur", "price": 8000, "priceType": "once", "category": "contenu", "emoji": "📝" },
+    { "id": "photos", "name": "Pack photos", "description": "Banque d'images premium", "price": 5000, "priceType": "once", "category": "contenu", "emoji": "📸" },
+    { "id": "multilangue", "name": "Multilingue", "description": "FR / EN + langues locales", "price": 12000, "priceType": "once", "category": "contenu", "emoji": "🌍" },
+    { "id": "domaine", "name": "Nom de domaine", "description": ".com, .africa, .bj, .ci, .sn…", "price": 7500, "priceType": "yearly", "category": "technique", "emoji": "🌐" },
+    { "id": "hebergement", "name": "Hébergement + SSL", "description": "Rapide, sécurisé, sauvegardes", "price": 12000, "priceType": "yearly", "category": "technique", "emoji": "☁️" },
+    { "id": "emails", "name": "Emails pro", "description": "3 adresses @tonentreprise", "price": 15000, "priceType": "yearly", "category": "technique", "emoji": "📧" },
+    { "id": "maintenance", "name": "Maintenance", "description": "Mises à jour & support prioritaire", "price": 5000, "priceType": "monthly", "category": "technique", "emoji": "🛠️" },
+    { "id": "reservation", "name": "Réservation / RDV", "description": "Créneaux, rappels, confirmation", "price": 10000, "priceType": "once", "category": "fonctionnalites", "emoji": "📅" },
+    { "id": "blog", "name": "Blog / actualités", "description": "Articles, catégories, recherche", "price": 8000, "priceType": "once", "category": "fonctionnalites", "emoji": "📰" },
+    { "id": "galerie", "name": "Galerie / portfolio", "description": "Photos & vidéos mises en avant", "price": 6000, "priceType": "once", "category": "fonctionnalites", "emoji": "🖼️" },
+    { "id": "whatsapp", "name": "Bouton WhatsApp", "description": "Chat direct depuis le site", "price": 3000, "priceType": "once", "category": "fonctionnalites", "emoji": "💬" },
+    { "id": "boutique", "name": "Boutique en ligne", "description": "Catalogue, panier, paiement Mobile Money", "price": 25000, "priceType": "once", "category": "ecommerce", "emoji": "🛒" },
+    { "id": "paiement", "name": "Paiement en ligne", "description": "Fedapay : Orange, MTN, Moov, Wave, carte", "price": 10000, "priceType": "once", "category": "ecommerce", "emoji": "💳" },
+    { "id": "livraison", "name": "Gestion livraison", "description": "Zones, frais, suivi", "price": 8000, "priceType": "once", "category": "ecommerce", "emoji": "🚚" },
+    { "id": "agent-whatsapp", "name": "Agent IA WhatsApp", "description": "Il répond, prend commandes et RDV 24/7", "price": 5000, "priceType": "monthly", "category": "ia", "emoji": "🤖" },
+    { "id": "chatbot-site", "name": "Chatbot IA sur le site", "description": "Assistant qui répond aux visiteurs", "price": 5000, "priceType": "monthly", "category": "ia", "emoji": "💡" },
+    { "id": "seo", "name": "SEO & Google Maps", "description": "Référencement local", "price": 20000, "priceType": "once", "category": "visibilite", "emoji": "🔍" },
+    { "id": "google-business", "name": "Fiche Google Business", "description": "Création & optimisation", "price": 10000, "priceType": "once", "category": "visibilite", "emoji": "📍" },
+    { "id": "formation", "name": "Formation", "description": "Prise en main de ton site", "price": 15000, "priceType": "once", "category": "visibilite", "emoji": "🎓" }
+  ],
+  "packs": [
+    { "id": "demarrage", "name": "Pack Démarrage", "tagline": "L'essentiel pour être en ligne.", "baseId": "vitrine", "supplementIds": ["domaine", "hebergement", "emails", "whatsapp"], "price": 35000, "priceType": "once", "saving": 7500 },
+    { "id": "business", "name": "Pack Business", "tagline": "Pour vendre et être visible.", "baseId": "vitrine-3d", "supplementIds": ["logo", "redaction", "whatsapp", "seo", "google-business"], "price": 59000, "priceType": "once", "saving": 14000, "highlight": true },
+    { "id": "ecommerce", "name": "Pack E-commerce", "tagline": "Boutique complète prête à vendre.", "baseId": "vitrine-3d", "supplementIds": ["logo", "boutique", "paiement", "livraison", "domaine", "hebergement"], "price": 85000, "priceType": "once", "saving": 14500 }
+  ],
+  "projects": [
+    { "id": "delices-abomey", "title": "Délices d'Abomey", "client": "Restaurant", "sector": "Restauration", "country": "Bénin", "category": "3d", "year": 2026, "description": "Site 3D motion avec commande en ligne et agent WhatsApp.", "tags": ["3D Motion", "Réservation", "WhatsApp"], "cover": "/showroom/delices.jpg", "coverFrom": "#FFD23F", "coverTo": "#E8A317", "featured": true },
+    { "id": "cabinet-menard", "title": "Cabinet Ménard & Associés", "client": "Cabinet comptable", "sector": "Services pro", "country": "Côte d'Ivoire", "category": "vitrine", "year": 2026, "description": "Vitrine institutionnelle sobre, prise de rendez-vous en ligne.", "tags": ["Vitrine", "RDV", "SEO"], "cover": "/showroom/menard.jpg", "coverFrom": "#1F1A12", "coverTo": "#3a2f1d", "featured": true },
+    { "id": "boutique-fatou", "title": "Fatou Mode", "client": "Boutique de vêtements", "sector": "Mode", "country": "Sénégal", "category": "ecommerce", "year": 2026, "description": "E-commerce avec paiement Mobile Money et livraison.", "tags": ["E-commerce", "Fedapay", "Livraison"], "cover": "/showroom/fatou.jpg", "coverFrom": "#FF6B4A", "coverTo": "#FF7AB6", "featured": true },
+    { "id": "ecole-lumiere", "title": "École La Lumière", "client": "École privée", "sector": "Éducation", "country": "Cameroun", "category": "app", "year": 2026, "description": "App parents + site : filières, inscriptions, espace famille.", "tags": ["Application", "Inscription", "Multilingue"], "cover": "/showroom/lumiere.jpg", "coverFrom": "#3D5AFE", "coverTo": "#22C55E", "featured": true },
+    { "id": "pharmacie-soleil", "title": "Pharmacie du Soleil", "client": "Pharmacie", "sector": "Santé", "country": "Togo", "category": "agent", "year": 2026, "description": "Agent IA WhatsApp pour la garde et les commandes.", "tags": ["Agent IA", "WhatsApp", "Santé"], "cover": "/showroom/pharmacie.jpg", "coverFrom": "#22C55E", "coverTo": "#16A34A", "featured": true },
+    { "id": "studio-koa", "title": "Studio Koa", "client": "Studio de création", "sector": "Créatif", "country": "Congo", "category": "audit", "year": 2026, "description": "Audit UX + refonte motion.", "tags": ["Audit", "3D Motion", "Portfolio"], "cover": "/showroom/koa.jpg", "coverFrom": "#8B5CF6", "coverTo": "#EC4899", "featured": true }
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   ]
 }

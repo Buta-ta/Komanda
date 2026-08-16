@@ -9,7 +9,11 @@ import { Check, ArrowRight } from "lucide-react";
 
 const fade = {
   hidden: { opacity: 0, y: 28 },
+<<<<<<< HEAD
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.2, 0.8, 0.2, 1] as [number, number, number, number] } },
+=======
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.2, 0.8, 0.2, 1] } },
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
 };
 
 export function HomeStory() {

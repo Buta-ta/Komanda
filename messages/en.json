@@ -86,7 +86,11 @@
       "audit": { "name": "Audit", "tagline": "We open the hood of your site or app." }
     }
   },
+<<<<<<< HEAD
   "hero": {
+=======
+    "hero": {
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "badge": "Sites · Apps · Agents · Audits",
     "title1": "Your website,",
     "title2": "delivered in 72h.",
@@ -100,6 +104,10 @@
     "navTracking": "Track order",
     "navOrder": "Order now",
     "cta": "Configure my order",
+<<<<<<< HEAD
+=======
+   
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "prices": {
       "vitrine": "Landing from 10,000 CFA",
       "motion": "3D Motion from 15,000 CFA",
@@ -223,6 +231,7 @@
     "monthly": "Monthly subscription",
     "yearly": "Yearly",
     "total": "Total",
+<<<<<<< HEAD
     "deliveryNote": "after payment and receiving your content.",
     "addAgent": "Add the WhatsApp AI Agent (5,000 CFA/month)",
     "popular": "Popular",
@@ -242,6 +251,10 @@
       "ia": "Artificial intelligence",
       "visibilite": "Visibility & growth"
     },
+=======
+    "deliveryNote": "Delivered in 72h after payment and receiving your content.",
+    "addAgent": "Add the WhatsApp AI Agent (5,000 CFA/month)",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "contact": {
       "title": "Your contact details",
       "subtitle": "We send confirmation and order tracking by WhatsApp and email.",
@@ -258,13 +271,19 @@
       "supplements": "Extras",
       "onceTotal": "Amount to pay",
       "plusMonthly": "+ {amount}/month (subscription)",
+<<<<<<< HEAD
       "demoNote": "MVP demo mode: Fedapay will be wired up with your API keys."
+=======
+      "demoNote": "MVP demo mode: Fedapay will be wired up with your API keys.",
+      "productValue": "{baseName} + {count} extras"
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     }
   },
   "agentPage": {
     "title": "Your AI sales rep that never sleeps.",
     "subtitle": "Komanda connects an AI agent directly to WhatsApp. It greets, answers, takes orders and books appointments, 24/7, in English.",
     "howItWorks": "How it works",
+<<<<<<< HEAD
     "mock": {
       "boutique": "Komanda · Shop",
       "online": "online",
@@ -274,6 +293,8 @@
       "sizes": "L, white and blue",
       "delivery": "Got it! Delivery to which area?"
     },
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "items": {
       "chat": { "title": "It chats", "desc": "On WhatsApp, like a natural salesperson. It understands questions, even the messy ones." },
       "notify": { "title": "It notifies you", "desc": "When an order or appointment is taken, you get an alert. You confirm in one tap." },
@@ -282,6 +303,7 @@
     "activate": "Activate for 5,000 CFA/month",
     "requestDemo": "Request a demo"
   },
+<<<<<<< HEAD
   "audit": {
     "metaTitle": "Website & app audit",
     "eyebrow": "Audit · {price} · 72h",
@@ -305,12 +327,17 @@
       { "t": "We can fix it", "d": "The audit becomes a Landing, 3D or App order. One button away." }
     ]
   },
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   "tracking": {
     "title": "Track your order",
     "subtitle": "Enter the 6-character code sent by WhatsApp and email after payment.",
     "placeholder": "e.g. KMD-7X2P",
     "button": "Track",
+<<<<<<< HEAD
     "order": "Order {code}",
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "statuses": {
       "PENDING_PAYMENT": "Awaiting payment",
       "PAID": "Payment received",
@@ -367,7 +394,14 @@
     "welcome": "Welcome 👋",
     "kpis": { "products": "Products", "minPrice": "Starting price", "countries": "Countries covered" },
     "nextSteps": "Back-office next steps"
+<<<<<<< HEAD
   },
+=======
+  }
+
+
+  ,
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   "auth": {
     "loginTitle": "Sign in",
     "loginSubtitle": "Access your orders, invoices and subscriptions.",
@@ -395,6 +429,7 @@
     "status_DELIVERED": "Delivered",
     "status_CANCELLED": "Cancelled",
     "status_REFUNDED": "Refunded"
+<<<<<<< HEAD
   },
   "adminLogin": {
     "title": "Team area",
@@ -402,5 +437,7 @@
     "continueWithGoogle": "Continue with Google",
     "back": "Back to website",
     "securityNote": "Restricted area. Unauthorized access is logged."
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import Link from "next/link";
@@ -18,6 +19,25 @@ export default function AdminLoginPage({
   useEffect(() => {
     params.then((p) => setLocale(p.locale));
   }, [params]);
+=======
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Logo } from "@/components/Logo";
+import { ShieldCheck, ArrowLeft } from "lucide-react";
+
+export const metadata = { title: "Admin — Komanda" };
+
+export default async function AdminLoginPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ error?: string; next?: string }>;
+}) {
+  const { locale } = await params;
+  const { error } = await searchParams;
+  const t = await getTranslations({ locale, namespace: "adminLogin" });
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
 
   const errorMessage =
     error === "forbidden"
@@ -35,7 +55,11 @@ export default function AdminLoginPage({
           href={`/${locale}`}
           className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white"
         >
+<<<<<<< HEAD
           <ArrowLeft size={14} /> Retour au site
+=======
+          <ArrowLeft size={14} /> {t("back")}
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
         </Link>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
@@ -45,7 +69,11 @@ export default function AdminLoginPage({
             </div>
             <div>
               <h1 className="font-display text-2xl font-extrabold text-white">
+<<<<<<< HEAD
                 Espace équipe
+=======
+                {t("title")}
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
               </h1>
               <p className="text-xs font-semibold uppercase tracking-wider text-komanda-yellow">
                 Komanda · Team
@@ -53,9 +81,13 @@ export default function AdminLoginPage({
             </div>
           </div>
 
+<<<<<<< HEAD
           <p className="mt-5 text-sm text-white/60">
             Réservé à l&apos;équipe Komanda. Connecte-toi avec ton compte Google.
           </p>
+=======
+          <p className="mt-5 text-sm text-white/60">{t("subtitle")}</p>
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
 
           {errorMessage && (
             <div className="mt-5 rounded-xl bg-red-500/10 p-3 text-center text-sm font-semibold text-red-300">
@@ -68,11 +100,19 @@ export default function AdminLoginPage({
             className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-komanda-yellow px-6 py-3.5 text-sm font-bold text-komanda-charcoal transition hover:bg-yellow-300"
           >
             <GoogleIcon />
+<<<<<<< HEAD
             Continuer avec Google
           </a>
 
           <div className="mt-6 rounded-xl border border-white/10 bg-black/20 p-3 text-[11px] leading-relaxed text-white/50">
             🔒 Accès restreint. Toute tentative non autorisée est journalisée.
+=======
+            {t("continueWithGoogle")}
+          </a>
+
+          <div className="mt-6 rounded-xl border border-white/10 bg-black/20 p-3 text-[11px] leading-relaxed text-white/50">
+            🔒 {t("securityNote")}
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
           </div>
         </div>
 

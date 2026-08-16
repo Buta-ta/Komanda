@@ -3,6 +3,10 @@ import { cookies } from "next/headers";
 
 export async function createClient() {
   const cookieStore = await cookies();
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -17,7 +21,11 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             );
           } catch {
+<<<<<<< HEAD
             // Ignoré dans un Server Component
+=======
+            // Ignoré dans un Server Component : on rafraîchit via middleware
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
           }
         },
       },

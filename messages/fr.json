@@ -86,7 +86,11 @@
       "audit": { "name": "Audit", "tagline": "On ouvre le capot de ton site ou de ton app." }
     }
   },
+<<<<<<< HEAD
   "hero": {
+=======
+    "hero": {
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "badge": "Sites · Apps · Agents · Audits",
     "title1": "Ton site,",
     "title2": "livré en 72h.",
@@ -100,6 +104,10 @@
     "navTracking": "Suivi",
     "navOrder": "Commander",
     "cta": "Configurer ma commande",
+<<<<<<< HEAD
+=======
+    
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "prices": {
       "vitrine": "Vitrine 10 000 CFA",
       "motion": "3D Motion 15 000 CFA",
@@ -223,6 +231,7 @@
     "monthly": "Abonnement mensuel",
     "yearly": "Annuel",
     "total": "Total",
+<<<<<<< HEAD
     "deliveryNote": "après paiement et réception de ton contenu.",
     "addAgent": "Ajoute l'agent IA WhatsApp (5 000 CFA/mois)",
     "popular": "Populaire",
@@ -242,6 +251,10 @@
       "ia": "Intelligence artificielle",
       "visibilite": "Visibilité & croissance"
     },
+=======
+    "deliveryNote": "Livré en 72h après paiement et réception de ton contenu.",
+    "addAgent": "Ajoute l'agent IA WhatsApp (5 000 CFA/mois)",
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "contact": {
       "title": "Tes coordonnées",
       "subtitle": "On t'envoie la confirmation et le suivi par WhatsApp et email.",
@@ -258,13 +271,19 @@
       "supplements": "Suppléments",
       "onceTotal": "Total à payer",
       "plusMonthly": "+ {amount}/mois (abonnement)",
+<<<<<<< HEAD
       "demoNote": "Mode démo MVP : l'intégration Fedapay sera branchée avec tes clés API."
+=======
+      "demoNote": "Mode démo MVP : l'intégration Fedapay sera branchée avec tes clés API.",
+      "productValue": "{baseName} + {count} suppléments"
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     }
   },
   "agentPage": {
     "title": "Ton commercial IA qui ne dort jamais.",
     "subtitle": "Komanda branche un agent IA directement sur WhatsApp. Il accueille, répond, prend commandes et RDV, 24/7, en français.",
     "howItWorks": "Comment il travaille",
+<<<<<<< HEAD
     "mock": {
       "boutique": "Komanda · Boutique",
       "online": "en ligne",
@@ -274,6 +293,8 @@
       "sizes": "L, blanc et bleu",
       "delivery": "Noté ! Livraison à quel quartier ?"
     },
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "items": {
       "chat": { "title": "Il discute", "desc": "Sur WhatsApp, comme un vendeur naturel. Il comprend les questions, même mal écrites." },
       "notify": { "title": "Il te notifie", "desc": "Quand une commande ou un RDV est pris, tu reçois une alerte. Tu valides d'un tap." },
@@ -282,6 +303,7 @@
     "activate": "Activer pour 5 000 CFA/mois",
     "requestDemo": "Demander une démo"
   },
+<<<<<<< HEAD
   "audit": {
     "metaTitle": "Audit site & app",
     "eyebrow": "Audit · {price} · 72h",
@@ -305,12 +327,17 @@
       { "t": "On peut réparer", "d": "L'audit se transforme en commande Vitrine, 3D ou App. Un bouton, la suite." }
     ]
   },
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   "tracking": {
     "title": "Suis ta commande",
     "subtitle": "Entre le code à 6 caractères reçu par WhatsApp et email après ton paiement.",
     "placeholder": "Ex. KMD-7X2P",
     "button": "Suivre",
+<<<<<<< HEAD
     "order": "Commande {code}",
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
     "statuses": {
       "PENDING_PAYMENT": "En attente de paiement",
       "PAID": "Paiement reçu",
@@ -367,7 +394,15 @@
     "welcome": "Bienvenue 👋",
     "kpis": { "products": "Produits", "minPrice": "Prix mini", "countries": "Pays couverts" },
     "nextSteps": "Prochaines étapes du back-office"
+<<<<<<< HEAD
   },
+=======
+  }
+
+
+
+  ,
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   "auth": {
     "loginTitle": "Connexion",
     "loginSubtitle": "Accède à tes commandes, factures et abonnements.",
@@ -395,6 +430,7 @@
     "status_DELIVERED": "Livrée",
     "status_CANCELLED": "Annulée",
     "status_REFUNDED": "Remboursée"
+<<<<<<< HEAD
   },
   "adminLogin": {
     "title": "Espace équipe",
@@ -402,5 +438,7 @@
     "continueWithGoogle": "Continuer avec Google",
     "back": "Retour au site",
     "securityNote": "Accès restreint. Toute tentative non autorisée est journalisée."
+=======
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   }
 }

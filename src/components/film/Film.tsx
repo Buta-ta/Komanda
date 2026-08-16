@@ -18,8 +18,12 @@ export function Film() {
   const [progress, setProgress] = useState(0);
   const [reduce, setReduce] = useState(false);
   const { frames, loaded, ready, hasFirst } = useFilmFrames();
+<<<<<<< HEAD
   const { store } = useCatalog();
   const bases = store?.bases ?? [];
+=======
+  const { bases } = useCatalog();
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   const locale = useLocale();
   const tc = useTranslations("catalog");
 
@@ -60,6 +64,7 @@ export function Film() {
 
   const cards = useMemo(
     () =>
+<<<<<<< HEAD
       (bases ?? []).map((b) => ({
         title: tc(`bases.${b.id}.name`),
         price: formatPrice(b.price),
@@ -67,6 +72,15 @@ export function Film() {
         accent: b.popular ? "#15110C" : "#FFD23F",
       })),
     [bases, tc]
+=======
+      bases.map((b) => ({
+        title: tc(`bases.${b.id}.name`),
+        price: formatPrice(b.price, locale),
+        tag: b.delay,
+        accent: b.popular ? "#15110C" : "#FFD23F",
+      })),
+    [bases, locale, tc]
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
   );
 
   const pct = Math.round((loaded / Math.max(1, frames.length || FRAME_COUNT)) * 100);
@@ -104,8 +118,13 @@ export function Film() {
               progressRef={progressRef}
               cards={bases.map((b) => ({
                 title: tc(`bases.${b.id}.name`),
+<<<<<<< HEAD
                 price: formatPrice(b.price),
                 tag: b.delay ?? "72h",
+=======
+                price: formatPrice(b.price, locale),
+                tag: b.delay,
+>>>>>>> f6e96b805ef61188457195cfdaa1aef6643990ba
                 accent: b.popular ? "#15110C" : "#FFD23F",
               }))}
             />
